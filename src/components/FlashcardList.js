@@ -34,6 +34,7 @@ class FlashcardList extends Component {
   addCard(newCard) {
     newCard["key"] = this.state.keyCounter;
     this.setState({ cards: [...this.state.cards, newCard], keyCounter: this.state.keyCounter + 1});
+    this.props.addCardToSet(newCard);
   }
 
   removeCard(removeKey) {

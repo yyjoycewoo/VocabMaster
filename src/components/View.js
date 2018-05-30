@@ -18,7 +18,8 @@ class View extends Component {
       mode: 'browse'
     }
 
-    this.updateCurrentSet = this.updateCurrentSet.bind(this)
+    this.updateCurrentSet = this.updateCurrentSet.bind(this);
+    this.addCardToSet = this.addCardToSet.bind(this);
   }
 
   render() {
@@ -29,7 +30,7 @@ class View extends Component {
       })[0]["cards"];
       return (
         <div className="View">
-          <FlashcardList cards={cards}/>
+          <FlashcardList cards={cards} addCardToSet={this.addCardToSet} />
           <SetList sets={this.state.sets} updateCurrentSet={this.updateCurrentSet}/>
         </div>
       )
@@ -46,6 +47,17 @@ class View extends Component {
     const target = event.target;
     const id = target.dataset.id;
     this.setState({currentSet: id});
+  }
+
+  addCardToSet(newCard) {
+    var newSets = this.state.sets.map(set => {
+      if (set["key"] == this.state.currentSet) {
+        set["cards"] = [...set["cards"], newCard]
+      }
+      return set
+    })
+    this.setState({sets: newSets});
+
   }
 
 
