@@ -31,7 +31,7 @@ class View extends Component {
       })[0]["cards"];
       return (
         <div className="View">
-          <FlashcardList cards={cards} addCardToSet={this.addCardToSet} />
+          <FlashcardList cards={cards} addCardToSet={this.addCardToSet} mode={"display"} />
           <SetList sets={this.state.sets} updateCurrentSet={this.updateCurrentSet} addSet={this.addSet}/>
         </div>
       )

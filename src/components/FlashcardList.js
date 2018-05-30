@@ -27,7 +27,7 @@ class FlashcardList extends Component {
   renderCards() {
 
     return this.props.cards.map(card => (
-      <Flashcard key={card["key"]} id={card["key"]} question={card["question"]} answer={card["answer"]} removeCard={this.removeCard}/>
+      <Flashcard key={card["key"]} id={card["key"]} question={card["question"]} answer={card["answer"]} removeCard={this.removeCard} display={this.props.mode}/>
     ));
   }
 
