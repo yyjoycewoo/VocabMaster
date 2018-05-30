@@ -17,15 +17,20 @@ class View extends Component {
       currentSet: curSet,
       mode: 'browse'
     }
+
+    this.updateCurrentSet = this.updateCurrentSet.bind(this)
   }
 
   render() {
     if (this.state.mode === 'browse') {
-      const cards = this.state.sets.filter(s => s["key"] === this.state.currentSet )[0]["cards"]
+      const cards = this.state.sets.filter(set => {
+
+        return set["key"] == this.state.currentSet;
+      })[0]["cards"];
       return (
         <div className="View">
           <FlashcardList cards={cards}/>
-          <SetList sets={this.state.sets}/>
+          <SetList sets={this.state.sets} updateCurrentSet={this.updateCurrentSet}/>
         </div>
       )
     } else {
@@ -35,6 +40,12 @@ class View extends Component {
     }
 
 
+  }
+
+  updateCurrentSet(event) {
+    const target = event.target;
+    const id = target.dataset.id;
+    this.setState({currentSet: id});
   }
 
 

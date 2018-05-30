@@ -25,6 +25,7 @@ class FlashcardList extends Component {
   }
 
   renderCards() {
+
     return this.state.cards.map(card => (
       <Flashcard key={card["key"]} id={card["key"]} question={card["question"]} answer={card["answer"]} removeCard={this.removeCard}/>
     ));
@@ -32,7 +33,7 @@ class FlashcardList extends Component {
 
   addCard(newCard) {
     newCard["key"] = this.state.keyCounter;
-    this.setState({ cards: [...this.state.cards, newCard], keyCounter: this.state.keyCounter++});
+    this.setState({ cards: [...this.state.cards, newCard], keyCounter: this.state.keyCounter + 1});
   }
 
   removeCard(removeKey) {
@@ -40,6 +41,10 @@ class FlashcardList extends Component {
       return card["key"] !== removeKey;
     });
     this.setState({ cards: filteredCards });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ cards: nextProps.cards });
   }
 }
 

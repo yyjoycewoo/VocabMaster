@@ -35,14 +35,14 @@ class SetList extends Component {
 
   renderSets() {
     return this.state.sets.map(set => (
-      <Set key={set["key"]} name={set["name"]} cards={set["cards"]} />
+      <Set key={set["key"]} id={set["key"]} name={set["name"]} cards={set["cards"]} onClick={this.props.updateCurrentSet}/>
     ));
   }
 
   addSet(newSet) {
     console.log(newSet)
     newSet["key"] = this.state.keyCounter;
-    this.setState({ sets: [...this.state.sets, newSet], keyCounter: this.state.keyCounter++ });
+    this.setState({ sets: [...this.state.sets, newSet], keyCounter: this.state.keyCounter + 1 });
   }
 
   // removeCard(removeKey) {

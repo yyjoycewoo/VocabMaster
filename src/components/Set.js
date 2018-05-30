@@ -11,7 +11,7 @@ class Set extends Component {
   render() {
 
     return (
-      <div onClick={this.renderSetCards} className="Set">
+      <div onClick={this.props.onClick} className="Set" data-id={this.props.id}>
         {this.props.name}
       </div>
     );
