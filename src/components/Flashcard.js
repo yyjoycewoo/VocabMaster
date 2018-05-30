@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Flashcard.css';
+import '../styles/Flashcard.css';
 // const states = Object.freeze({
 //   FRONT: Symbol(['front']),
 //   BACK: Symbol(['back']),
@@ -26,12 +26,12 @@ class Flashcard extends Component {
       </div>
     );
   }
-  
+
   constructor(props) {
     super(props);
     this.state = { display: 'front' };
-    this.removeCard = this.removeCard.bind(this);  
-    this.flipCard = this.flipCard.bind(this);  
+    this.removeCard = this.removeCard.bind(this);
+    this.flipCard = this.flipCard.bind(this);
   }
 
   removeCard() {
