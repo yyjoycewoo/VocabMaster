@@ -5,6 +5,14 @@
   color: #333;
   margin: 20px;
   padding: 20px;
+
+  display: grid;
+  grid-template-columns: 20% 80%;
+  
+  grid-gap: 10px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "setList flashcardList";
 }
 
 .App-logo {
