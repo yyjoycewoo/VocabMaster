@@ -23,7 +23,7 @@ class View extends Component {
     if (this.state.mode === 'browse') {
       const cards = this.state.sets.filter(s => s["key"] === this.state.currentSet )[0]["cards"]
       return (
-        <div className="App">
+        <div className="View">
           <FlashcardList cards={cards}/>
           <SetList sets={this.state.sets}/>
         </div>
