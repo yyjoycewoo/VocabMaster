@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import '../styles/Set.css';
+import React, { Component } from "react";
+import "../styles/Set.css";
 // const states = Object.freeze({
-//   FRONT: Symbol(['front']),
-//   BACK: Symbol(['back']),
-//   BROWSE: Symbol(['front_and_back'])
+//   FRONT: Symbol(["front"]),
+//   BACK: Symbol(["back"]),
+//   BROWSE: Symbol(["front_and_back"])
 // })
 
 class Set extends Component {
@@ -24,7 +24,7 @@ class Set extends Component {
   }
 
   renderSetCards() {
-    console.log('to do render set cards')
+    console.log("to do render set cards")
   }
 
 }

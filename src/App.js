@@ -1,13 +1,13 @@
-import React from 'react';
-import './styles/App.css';
-import FlashcardList from './components/FlashcardList';
-import SetList from './components/SetList';
+import React from "react";
+import "./styles/App.css";
+import View from "./components/View";
+var json = require('./dummy_data.json');
 
 const App = () => {
+  console.log(json)
   return (
     <div className="App">
-      <FlashcardList />
-      <SetList />
+      <View sets={json["sets"]} />
     </div>
   );
 };

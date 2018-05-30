@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import '../styles/AddItem.css';
+import React, { Component } from "react";
+import "../styles/AddItem.css";
 
 class AddItem extends Component {
   constructor(props) {
     super(props);
-    this.state = { question: '', answer: '', name: '' };
+    this.state = { question: "", answer: "", name: "" };
     this.handleUpdate = this.handleUpdate.bind(this);
     this.addCard = this.addCard.bind(this);
     this.addSet = this.addSet.bind(this);
@@ -17,8 +17,8 @@ class AddItem extends Component {
                       answer: this.state.answer,
                     }
     this.props.addCard(newCard);
-    this.setState({ question: '' });
-    this.setState({ answer: '' });
+    this.setState({ question: "" });
+    this.setState({ answer: "" });
   }
 
   addSet() {
@@ -28,7 +28,7 @@ class AddItem extends Component {
     }
 
     this.props.addSet(newSet);
-    this.setState({ name: '' });
+    this.setState({ name: "" });
   }
 
 
@@ -41,7 +41,7 @@ class AddItem extends Component {
   }
 
   render() {
-    if (this.props.type === 'flashcard') {
+    if (this.props.type === "flashcard") {
       return (
         <div className="AddItem">
           <input
