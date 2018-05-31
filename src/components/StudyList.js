@@ -9,11 +9,11 @@ class StudyList extends Component {
     const numCards = this.props.cards.length;
     return (
       <div className="StudyList">
-        <Flashcard key={card["key"]} 
+        <Flashcard key={card["key"]}
           id={card["key"]}
           setId={card["setId"]}
-          question={card["question"]} 
-          answer={card["answer"]} 
+          question={card["question"]}
+          answer={card["answer"]}
           display={this.props.mode} />
         <button onClick={this.goToNextCard}>Next</button>
         <div>Progress: {currCard+1} / {numCards}</div>
