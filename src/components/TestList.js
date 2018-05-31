@@ -2,48 +2,13 @@ import React, { Component } from "react";
 import "../styles/TestList.css";
 import Flashcard from "./Flashcard";
 
-class StudyList extends Component {
+class TestList extends Component {
   render() {
-    if (this.props.mode == "study") {
-      return this.renderStudyList();
-    } else if (this.props.mode == "test") {
-      return this.renderTestList();
-    }
-  }
-
-  constructor(props) {
-    super(props);
-    this.state = { currentCard: 0, numCorrect: 0 };
-    this.renderStudyList = this.renderStudyList.bind(this);
-    this.renderTestList = this.renderTestList.bind(this);
-    this.goToNextCard = this.goToNextCard.bind(this);
-    this.processAnswer = this.processAnswer.bind(this);
-  }
-
-  renderStudyList() {
     const currCard = this.state.currentCard;
     const card = this.props.cards[currCard];
     const numCards = this.props.cards.length;
     return (
-      <div className="StudyList">
-        <Flashcard key={card["key"]} 
-          id={card["key"]}
-          setId={card["setId"]}
-          question={card["question"]} 
-          answer={card["answer"]} 
-          display={this.props.mode} />
-        <button onClick={this.goToNextCard}>Next</button>
-        <div>Progress: {currCard+1} / {numCards}</div>
-      </div>
-    )
-  }
-
-  renderTestList() {
-    const currCard = this.state.currentCard;
-    const card = this.props.cards[currCard];
-    const numCards = this.props.cards.length;
-    return (
-      <div className="StudyList">
+      <div className="TestList">
         <Flashcard key={card["key"]} 
           id={card["key"]}
           setId={card["setId"]}
@@ -67,6 +32,13 @@ class StudyList extends Component {
     )
   }
 
+  constructor(props) {
+    super(props);
+    this.state = { currentCard: 0, numCorrect: 0 };
+    this.goToNextCard = this.goToNextCard.bind(this);
+    this.processAnswer = this.processAnswer.bind(this);
+  }
+
   goToNextCard() {
     const numCards = this.props.cards.length;
     const nextCard = (this.state.currentCard + 1) % numCards;
@@ -86,4 +58,4 @@ class StudyList extends Component {
     this.goToNextCard();
   }
 }
-export default StudyList;
+export default TestList;
