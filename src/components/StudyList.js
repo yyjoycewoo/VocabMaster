@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "../styles/FlashcardList.css";
 import Flashcard from "./Flashcard";
-import AddItem from "./AddItem";
 
 class StudyList extends Component {
   render() {
