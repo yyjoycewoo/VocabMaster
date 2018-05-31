@@ -62,7 +62,7 @@ class Flashcard extends Component {
         <div>
           {this.props.answer}
         </div>
-        <button onClick={this.removeCard}>Remove Me!</button>
+        <button class="delete-button" onClick={this.removeCard}></button>
       </div>
     )
   }

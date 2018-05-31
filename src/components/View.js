@@ -16,7 +16,7 @@ class View extends Component {
     this.state = {
       sets: sets,
       currentSet: currSet,
-      mode: 'test',
+      mode: 'browse',
     }
 
     this.updateCurrentSet = this.updateCurrentSet.bind(this);
@@ -60,7 +60,7 @@ class View extends Component {
       { (this.state.mode === 'browse') && browseCardList }
       { (this.state.mode === 'study') && studyCardList }
       { (this.state.mode === 'test') && testCardList }
-      
+
       {setList}
     </div>
     )
