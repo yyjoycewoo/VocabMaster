@@ -44,12 +44,14 @@ class AddItem extends Component {
           <input
             type="text"
             name="question"
+            className="input"
             onChange={this.handleUpdate}
             value={this.state.question}
           />
           <input
             type="text"
             name="answer"
+            className="input"
             onChange={this.handleUpdate}
             value={this.state.answer}
           />
@@ -64,6 +66,7 @@ class AddItem extends Component {
           <input
             type="text"
             name="name"
+            className="input"
             onChange={this.handleUpdate}
             value={this.state.name}
           />
