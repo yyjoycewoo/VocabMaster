@@ -36,6 +36,18 @@ class View extends Component {
     const browseButton = <button onClick={this.updateMode} name="browse">Browse Mode</button>;
     const studyButton = <button onClick={this.updateMode}  name="study">Study Mode</button>;
     const testButton = <button onClick={this.updateMode} name="test">Test Mode</button>;
+    const setList = <SetList sets={this.state.sets}
+                      updateCurrentSet={this.updateCurrentSet} 
+                      removeSet={this.removeSet}
+                      addSet={this.addSet}/>
+    const testCardList = <StudyList cards={cards} 
+                          mode={"test"} />
+    const studyCardList = <StudyList cards={cards} 
+                          mode={"study"} />
+    const browseCardList = <FlashcardList cards={cards} 
+                            addCardToSet={this.addCardToSet} 
+                            removeCardFromSet={this.removeCardFromSet} 
+                            mode={"browse"} />
     
     if (this.state.mode === 'browse') {
       return (
@@ -45,14 +57,8 @@ class View extends Component {
             {studyButton}
             {testButton}
           </div>
-          <FlashcardList cards={cards} 
-            addCardToSet={this.addCardToSet} 
-            removeCardFromSet={this.removeCardFromSet} 
-            mode={"browse"} />
-          <SetList sets={this.state.sets}
-            updateCurrentSet={this.updateCurrentSet}
-            removeSet={this.removeSet}
-            addSet={this.addSet}/>
+          {browseCardList}
+          {setList}
         </div>
       )
     } else if (this.state.mode === 'study') {
@@ -63,12 +69,8 @@ class View extends Component {
             {studyButton}
             {testButton}
           </div>
-          <StudyList cards={cards} 
-            mode={"study"} />
-          <SetList sets={this.state.sets}
-            updateCurrentSet={this.updateCurrentSet} 
-            removeSet={this.removeSet}
-            addSet={this.addSet}/>
+          {studyCardList}
+          {setList}
         </div>
       )
     } else if (this.state.mode === 'test') {
@@ -79,12 +81,8 @@ class View extends Component {
             {studyButton}
             {testButton}
           </div>
-          <StudyList cards={cards} 
-            mode={"test"} />
-          <SetList sets={this.state.sets}
-            updateCurrentSet={this.updateCurrentSet}
-            removeSet={this.removeSet}
-            addSet={this.addSet}/>
+          {testCardList}
+          {setList}
         </div>
       )
     }
