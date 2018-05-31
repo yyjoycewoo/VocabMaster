@@ -10,18 +10,9 @@
   border: 2px solid #00D8FF;
   background: #66B8Bf;
   font-size: 300%;
-  /* flex: 6; */
   margin: 5px;
   width: 500px;
   height: 300px;
-  /* display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-template-rows: 90% minmax(30px, 5%);
-  grid-gap: 10px;
-  grid-template-areas:
-    ". center ."
-    ". answer .";
-  align-items: center; */
 }
 
 .testCard span {
@@ -29,8 +20,6 @@
 }
 
 .answerForm {
-  /* grid-area: answer; */
-  /* flex: 1; */
   margin: 5px;
   width: 500px;
 }
@@ -43,7 +32,6 @@
 }
 
 .accuracy {
-  /* flex: 1; */
   margin: 5px;
   width: 100%;
 }
