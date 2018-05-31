@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../styles/View.css";
 import SetList from "./SetList";
 import FlashcardList from "./FlashcardList";
-import StudyView from "./StudyView";
+import StudyList from "./StudyList";
 
 class View extends Component {
 
@@ -15,7 +15,8 @@ class View extends Component {
     this.state = {
       sets: sets,
       currentSet: currSet,
-      mode: 'browse',
+      // mode: 'browse',
+      mode: 'study',
     }
 
     this.updateCurrentSet = this.updateCurrentSet.bind(this);
@@ -26,12 +27,11 @@ class View extends Component {
   }
 
   render() {
+    // find the cards belonging to the selected set (default = 0)
+    const getCurrentSet = this.state.sets
+      .filter(set => (set["key"] == this.state.currentSet))[0];
+    const cards = (typeof getCurrentSet !== 'undefined') ? getCurrentSet["cards"] : [];
     if (this.state.mode === 'browse') {
-      // find the cards belonging to the selected set (default = 0)
-      const getCurrentSet = this.state.sets
-        .filter(set => (set["key"] == this.state.currentSet))[0];
-      const cards = (typeof getCurrentSet !== 'undefined') ? getCurrentSet["cards"] : [];
-
       return (
         <div className="View">
           <FlashcardList cards={cards}
@@ -44,9 +44,16 @@ class View extends Component {
             addSet={this.addSet}/>
         </div>
       )
-    } else { // mode == 'study'
+    } else if (this.state.mode === 'study') {
       return (
-        <p> nothing here </p>
+        <div className="View">
+          <StudyList cards={cards}
+            mode={"study"}/>
+          <SetList sets={this.state.sets}
+            updateCurrentSet={this.updateCurrentSet}
+            removeSet={this.removeSet}
+            addSet={this.addSet}/>
+        </div>
       )
     }
   }
