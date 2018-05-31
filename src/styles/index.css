@@ -14,7 +14,7 @@ span {
 .card {
   border: 0px !important;
   text-align: center !important;
-  margin: 0px;
+  margin: auto;
   padding: 0px !important;
 
   box-shadow: 4px 4px #888888;

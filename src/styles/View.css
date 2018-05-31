@@ -1,6 +1,6 @@
 .View {
   display: grid;
-  grid-template-columns: minmax(250px, 20%) minmax(250px, 80%);
+  grid-template-columns: minmax(250px, auto) minmax(270px, 80%);
 
   grid-gap: 10px;
   grid-template-rows: minmax(30px, 5%) 90%;
