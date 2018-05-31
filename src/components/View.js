@@ -55,7 +55,7 @@ class View extends Component {
             addSet={this.addSet}/>
         </div>
       )
-    } else if (this.state.mode === 'study') { 
+    } else if (this.state.mode === 'study') {
       return (
         <div className="View">
           <div className="Modes">
@@ -82,7 +82,7 @@ class View extends Component {
           <StudyList cards={cards} 
             mode={"test"} />
           <SetList sets={this.state.sets}
-            updateCurrentSet={this.updateCurrentSet} 
+            updateCurrentSet={this.updateCurrentSet}
             removeSet={this.removeSet}
             addSet={this.addSet}/>
         </div>

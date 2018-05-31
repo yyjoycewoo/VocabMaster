@@ -7,8 +7,8 @@ class FlashcardList extends Component {
   render() {
     return (
       <div className="FlashcardList">
-        <AddItem addCard={this.addCard} type="flashcard" />
         {this.renderCards()}
+        <AddItem addCard={this.addCard} type="flashcard" />
       </div>
     );
   }
@@ -21,12 +21,12 @@ class FlashcardList extends Component {
 
   renderCards() {
     return this.props.cards.map(card => (
-      <Flashcard key={card["key"]} 
+      <Flashcard key={card["key"]}
         id={card["key"]}
-        question={card["question"]} 
+        question={card["question"]}
         setId={card["setId"]}
-        answer={card["answer"]} 
-        removeCard={this.removeCard} 
+        answer={card["answer"]}
+        removeCard={this.removeCard}
         display={this.props.mode}/>
     ));
   }

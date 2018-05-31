@@ -1,7 +1,13 @@
 .FlashcardList {
-    padding: 20px;
-    border: 2px solid #00D8FF;
-    background: #DDEEFF;
+  padding: 20px;
+  border: 2px solid #00D8FF;
+  background: #DDEEFF;
 
-    grid-area: flashcardList;
-  }
+  grid-area: flashcardList;
+
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
