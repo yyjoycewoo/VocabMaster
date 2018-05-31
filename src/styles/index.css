@@ -16,3 +16,11 @@ body {
   width: 200px !important;
   height: 100px !important;
 }
+
+.delete-button {
+  background-image: url("../assets/delete-button.png");
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+  border: none;
+}

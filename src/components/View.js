@@ -16,7 +16,7 @@ class View extends Component {
     this.state = {
       sets: sets,
       currentSet: currSet,
-      mode: 'test',
+      mode: 'browse',
     }
 
     this.updateCurrentSet = this.updateCurrentSet.bind(this);
@@ -48,44 +48,22 @@ class View extends Component {
                             addCardToSet={this.addCardToSet} 
                             removeCardFromSet={this.removeCardFromSet} 
                             mode={"browse"} />
+
+    return (
+    <div className="View">
+      <div className="Modes">
+        {browseButton}
+        {studyButton}
+        {testButton}
+      </div> 
     
-    if (this.state.mode === 'browse') {
-      return (
-        <div className="View">
-          <div className="Modes">
-            {browseButton}
-            {studyButton}
-            {testButton}
-          </div>
-          {browseCardList}
-          {setList}
-        </div>
-      )
-    } else if (this.state.mode === 'study') {
-      return (
-        <div className="View">
-          <div className="Modes">
-            {browseButton}
-            {studyButton}
-            {testButton}
-          </div>
-          {studyCardList}
-          {setList}
-        </div>
-      )
-    } else if (this.state.mode === 'test') {
-      return (
-        <div className="View">
-          <div className="Modes">
-            {browseButton}
-            {studyButton}
-            {testButton}
-          </div>
-          {testCardList}
-          {setList}
-        </div>
-      )
-    }
+      { (this.state.mode === 'browse') && browseCardList }
+      { (this.state.mode === 'study') && studyCardList }
+      { (this.state.mode === 'test') && testCardList }
+
+      {setList}
+    </div>
+    )
   }
 
   updateMode(event) {
