@@ -19,6 +19,7 @@ class TestList extends Component {
             setId={card["setId"]}
             question={card["question"]} 
             answer={card["answer"]} 
+            color={card["color"]}
             display={this.props.mode} />
 
           <form className="answerForm" onSubmit={this.processAnswer}>
