@@ -1,9 +1,9 @@
 .View {
   display: grid;
 
-  grid-template-columns: minmax(250px, 20%) minmax(250px, 80%);
+  grid-template-columns: minmax(250px, 20vw) minmax(250px, 80vw);
   grid-gap: 10px;
-  grid-template-rows: minmax(30px, 5%) 90%;
+  grid-template-rows: minmax(30px, 3vh) 90%;
   grid-template-areas:
     "setList modes"
     "setList flashcardList";
@@ -12,4 +12,5 @@
 .Modes {
   background: #ddd;
   grid-area: modes;
+  height: 5vh;
 }

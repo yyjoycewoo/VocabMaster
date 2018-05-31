@@ -4,11 +4,11 @@ import "../styles/Flashcard.css";
 class Flashcard extends Component {
 
   render() {
-    if (this.props.display === "study") {
+    if (this.props.display === "browse") {
       return  (
         this.renderFlipCard()
       )
-    } else if (this.props.display === "browse"){
+    } else if (this.props.display === "test"){
       return (
         this.renderBrowseCard()
       )
@@ -40,7 +40,7 @@ class Flashcard extends Component {
 
   renderFlipCard() {
     return  (
-      <div className="Flashcard flip-container card center studyCard" ontouchstart="this.classList.toggle('hover');">
+      <div className="Flashcard flip-container card studyCard" ontouchstart="this.classList.toggle('hover');">
         <div className="flipper">
           <div className="front">
             <span>{this.props.question}</span>
@@ -55,7 +55,7 @@ class Flashcard extends Component {
 
   renderBrowseCard() {
     return (
-      <div className="Flashcard card browseCard">
+      <div className="Flashcard card center browseCard">
         <div>
           <span>{this.props.question}</span>
         </div>
