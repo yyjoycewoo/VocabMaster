@@ -6,7 +6,7 @@ class Set extends Component {
     return (
       <div onClick={this.props.onClick} className="Set card" data-id={this.props.id}>
         {this.props.name}
-        <button class="delete-button" onClick={this.removeSet}></button>
+        <button className="delete-button" onClick={this.removeSet}></button>
       </div>
     );
   }

@@ -5,30 +5,30 @@ import ResultsList from "./ResultsList";
 
 class TestList extends Component {
   render() {
+    console.log('test list props', this.props)
+    console.log('test list state', this.state)
+
     const currCardIndex = this.state.currentCard;
     const card = this.props.cards[currCardIndex];
+    const numCards = this.props.cards.length;
     const correctCards = this.state.correctCards;
     const incorrectCards = this.state.incorrectCards;
-    const totalCardsTested = correctCards.length + incorrectCards.length;
-
-    console.log(currCardIndex)
-    console.log(card);
 
     return (
       <div className="TestList">
       { this.isFinishedTest() ? (
         <div>
           <Flashcard key={card["key"]} 
-          id={card["key"]}
-          setId={card["setId"]}
-          question={card["question"]} 
-          answer={card["answer"]} 
-          display={this.props.mode} />
+            id={card["key"]}
+            setId={card["setId"]}
+            question={card["question"]} 
+            answer={card["answer"]} 
+            display={this.props.mode} />
         
           <form onSubmit={this.processAnswer}>
             <input 
               type="text"
-              class="answer"
+              className="answer"
               onChange={this.handleUpdate}
               value={this.state.question}
             />
@@ -38,18 +38,39 @@ class TestList extends Component {
           <ResultsList correctCards={correctCards} incorrectCards={incorrectCards}/>
         )
       }
-        <div>Accuracy: {correctCards.length} / {totalCardsTested}</div>
+        <div>Accuracy: {correctCards.length} / {numCards}</div>
       </div>
     )
   }
 
   constructor(props) {
     super(props);
-    this.state = { currentCard: 0, correctCards: [], incorrectCards: [] };
+    this.state = { currentCard: 0, 
+                    currentSet: this.props.currSet,
+                    correctCards: [], 
+                    incorrectCards: [] 
+                  };
     this.processAnswer = this.processAnswer.bind(this);
     this.goToNextCard = this.goToNextCard.bind(this);
     this.displayTestResults = this.displayTestResults.bind(this);
     this.isFinishedTest = this.isFinishedTest.bind(this);
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    console.log('getDerivedStateFromProps')
+    console.log('next props', nextProps);
+    console.log('prev state', prevState);
+    if (nextProps.currSet != prevState.currentSet) {
+      console.log('in if')
+      return { currentCard: 0, 
+                currentSet: nextProps.currSet,
+                correctCards: [],
+                incorrectCards: []
+              };
+    } else {
+      console.log('in else')
+      return {};
+    }
   }
 
   isFinishedTest() {

@@ -7,7 +7,6 @@ body {
         /* As IE6 ignores !important it will set width as 1000px; */
 }
 
-
 .card {
   border: 0px !important;
   text-align: center !important;
