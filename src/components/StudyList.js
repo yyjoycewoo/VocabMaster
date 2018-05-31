@@ -8,7 +8,7 @@ class StudyList extends Component {
     const numCards = this.props.cards.length;
     const card = this.props.cards[currCard];
 
-    console.log(typeof(card))
+    console.log(this.props.cards)
     return (
       <div className="StudyList">
         { typeof(card) !== "undefined" && [

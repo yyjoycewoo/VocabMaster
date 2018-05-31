@@ -8,33 +8,37 @@ class ResultsList extends Component {
   }
 
   render() {
+    const correctCards = this.props.correctCards;
+    const incorrectCards = this.props.incorrectCards;
+    const numCards = correctCards.length + incorrectCards.length;
+
     return(
     <div className="ResultsList">
       <div className="CorrectCards">
         <h3>Correct</h3>
-        {console.log(this.props.correctCards)}
-        {this.props.correctCards.map(card => (
+        {correctCards.map(card => (
           (<Flashcard key={card["key"]}
             id={card["key"]}
             question={card["question"]}
             setId={card["setId"]}
             answer={card["answer"]}
             removeCard={this.removeCard}
-            display={this.props.mode}/>)
+            display="testResults"/>)
         ))}
       </div>
       <div className="IncorrectCards">
         <h3>Incorrect</h3>
-        {this.props.incorrectCards.map(card => (
+        {incorrectCards.map(card => (
           (<Flashcard key={card["key"]}
             id={card["key"]}
             question={card["question"]}
             setId={card["setId"]}
             answer={card["answer"]}
             removeCard={this.removeCard}
-            display={this.props.mode}/>)
+            display="testResults"/>)
         ))}
       </div>
+      <div className="accuracy">Accuracy: {correctCards.length} / {numCards}</div>
     </div>
     )
   }

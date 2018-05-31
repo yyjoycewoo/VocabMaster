@@ -1,7 +1,30 @@
+.ResultsList {
+  padding: 0px;
+  border: 2px solid #00D8FF;
+  background: #DDEEFF;
+  justify-content: center;
+  grid-area: flashcardList;
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 10px;
+  grid-template-areas:
+    "correctCards incorrectCards"
+    "accuracy accuracy";
+}
+
+.card {
+  margin: 10px auto;
+}
+
 .CorrectCards {
-  float: left;
+  grid-area: correctCards;
 }
 
 .IncorrectCards {
-  float: right;
+  grid-area: incorrectCards;
+}
+
+.accuracy {
+  grid-area: accuracy;
 }

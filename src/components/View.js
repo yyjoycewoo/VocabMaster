@@ -33,8 +33,6 @@ class View extends Component {
       .filter(set => (set["key"] == this.state.currentSet))[0];
     const cards = (typeof getCurrentSet !== 'undefined') ? getCurrentSet["cards"] : [];
 
-    console.log('view current set', this.state.currentSet);
-
     const browseButton = <button onClick={this.updateMode} name="browse">Browse Mode</button>;
     const studyButton = <button onClick={this.updateMode}  name="study">Study Mode</button>;
     const testButton = <button onClick={this.updateMode} name="test">Test Mode</button>;
