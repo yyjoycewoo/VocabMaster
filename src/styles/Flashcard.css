@@ -7,8 +7,7 @@
   align-items: center;
 }
 
-.studyCard {
-  background: #66B8Bf;
+.browseCard {
   color: black;
 }
 
@@ -115,5 +114,7 @@
 
 .studyCard {
   width: 400px;
+  background: #66B8Bf;
+
   height: calc(width * 0.75);
 }
