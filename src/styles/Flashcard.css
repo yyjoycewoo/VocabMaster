@@ -2,9 +2,8 @@
   border: 2px solid black;
   text-align: center;
   color: #333;
-  margin: 0px;
   padding: 0px;
-  /* display: flex;*/
+  text-align: center;
   align-items: center;
 }
 
@@ -116,6 +115,5 @@
 
 .studyCard {
   width: 400px;
-	height: 250px;
-	font-size: 300%;
+  height: calc(width * 0.75);
 }
