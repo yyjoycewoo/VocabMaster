@@ -1,27 +1,38 @@
-.testCards {
+.TestList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.testCard {
   padding: 20px;
   border: 2px solid #00D8FF;
-  background: #DDEEFF;
-
-
-  display: grid;
+  background: #66B8Bf;
+  font-size: 300%;
+  flex: 6;
+  margin: 5px;
+  width: 100%;
+  /* display: grid;
   grid-template-columns: 33% 33% 33%;
   grid-template-rows: 90% minmax(30px, 5%);
   grid-gap: 10px;
   grid-template-areas:
     ". center ."
     ". answer .";
-  align-items: center;
+  align-items: center; */
 }
-
-
-.center {
-  grid-area: center;
-  margin: auto;
-}
-
-
 
 .answerForm {
-  grid-area: answer;
+  /* grid-area: answer; */
+  width: 80%;
+  flex: 1;
+  margin: 5px;
+  width: 100%;
+}
+
+.accuracy {
+  flex: 1;
+  margin: 5px;
+  width: 100%;
 }

@@ -2,7 +2,7 @@
   padding: 20px;
   border: 2px solid #00D8FF;
   background: #DDEEFF;
-  max-height: 80vh;
+  height: 80vh;
   overflow: auto;
 
   grid-area: flashcardList;

@@ -17,14 +17,14 @@ class TestList extends Component {
     return (
       <div className="TestList">
       { this.isFinishedTest() ? (
-        <div>
+        [
           <Flashcard key={card["key"]} 
             id={card["key"]}
             setId={card["setId"]}
             question={card["question"]} 
             answer={card["answer"]} 
-            display={this.props.mode} />
-        
+            display={this.props.mode} />,
+
           <form className="answerForm" onSubmit={this.processAnswer}>
             <input 
               type="text"
@@ -33,12 +33,11 @@ class TestList extends Component {
               value={this.state.question}
             />
           </form>
-        </div>
-        ) : ( // show results
-          <ResultsList correctCards={correctCards} incorrectCards={incorrectCards}/>
-        )
-      }
-        <div>Accuracy: {correctCards.length} / {numCards}</div>
+        ]
+      ) : ( // show results
+        <ResultsList correctCards={correctCards} incorrectCards={incorrectCards}/>
+      )}
+        <div className="accuracy">Accuracy: {correctCards.length} / {numCards}</div>
       </div>
     )
   }
