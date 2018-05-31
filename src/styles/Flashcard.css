@@ -4,8 +4,13 @@
   color: #333;
   margin: 0px;
   padding: 0px;
-  width: 200px;
-  height: 100px;
+  /* display: flex;*/
+  align-items: center;
+}
+
+.browseCard {
+  background: #66B8Bf;
+  color: black;
 }
 
 .flip-container {
@@ -14,7 +19,6 @@
   -o-perspective: 1000;
   perspective: 1000;
 
-	border: 1px solid #ccc;
 }
 
 	.flip-container:hover .flipper,
@@ -23,11 +27,12 @@
 		-moz-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
 		transform: rotateY(180deg);
+
+    box-shadow: none !important;
 	}
 
 .flip-container, .front, .back {
-	width: 200px;
-	height: 100%;
+
 }
 
 .flipper {
@@ -62,6 +67,7 @@
 	background: #66B8Bf !important;
   color: white;
 	z-index: 2;
+  width: 100%;
   height: 100%;
 }
 
@@ -73,8 +79,8 @@
 
   color: white;
 	background: black;
-  height: 100%;
-
+  width: 100%;
+	height: 100%;
 }
 
 .front .name {
@@ -96,27 +102,6 @@
 	transform: rotate(-20deg);
 }
 
-.back-logo {
-	position: absolute;
-	top: 40px;
-	left: 90px;
-	width: 160px;
-	height: 117px;
-	background-color: red;
-}
-
-.back-title {
-	font-weight: bold;
-	color: #00304a;
-	position: absolute;
-	top: 180px;
-	left: 0;
-	right: 0;
-	text-align: center;
-	text-shadow: 0.1em 0.1em 0.05em #acd7e5;
-	font-family: Courier;
-	font-size: 2em;
-}
 
 .back p {
 	position: absolute;
@@ -127,4 +112,14 @@
 	padding: 0 20px;
   font-family: arial;
   line-height: 2em;
+}
+
+.testCard {
+  background: #66B8Bf;
+
+}
+
+.testCard, .studyCard {
+  width: 400px;
+  height: 250px;
 }

@@ -25,7 +25,7 @@ class TestList extends Component {
             answer={card["answer"]} 
             display={this.props.mode} />
         
-          <form onSubmit={this.processAnswer}>
+          <form className="answerForm" onSubmit={this.processAnswer}>
             <input 
               type="text"
               className="answer"
@@ -97,7 +97,7 @@ class TestList extends Component {
     const answer = document.querySelector(".answer");
     const currCardIndex = this.state.currentCard;
     const card = this.props.cards[currCardIndex];
-    
+
     if (card.answer === answer.value) {
       this.setState({correctCards: [...this.state.correctCards, card]});
     } else {
