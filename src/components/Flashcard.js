@@ -1,57 +1,20 @@
 import React, { Component } from "react";
 import "../styles/Flashcard.css";
-// const states = Object.freeze({
-//   FRONT: Symbol(["front"]),
-//   BACK: Symbol(["back"]),
-//   BROWSE: Symbol(["front_and_back"])
-// })
 
 class Flashcard extends Component {
 
-  // render() {
-  //   let element;
-  //   if (this.state.display === "front") {
-  //     element = this.props.question;
-  //   } else if (this.state.display === "back") {
-  //     element = this.props.answer;
-  //   } else if (this.state.display === "front_and_back") {
-  //     element = this.props.question + " " + this.props.answer;
-  //   }
-  //
-  //   return (
-  //     <div onClick={this.flipCard} className="Flashcard">
-  //       {element}
-  //       <br/>
-  //       <button onClick={this.removeCard}>Remove Me!</button>
-  //     </div>
-  //   );
-  // }
-
   render() {
-    if (this.props.display === "test") {
+    if (this.props.display === "study") {
       return  (
-        <div className="Flashcard flip-container" ontouchstart="this.classList.toggle('hover');">
-          <div className="flipper">
-            <div className="front">
-              {this.props.question}
-            </div>
-            <div className="back">
-              {this.props.answer}
-            </div>
-          </div>
-        </div>
+        this.renderFlipCard()
+      )
+    } else if (this.props.display === "browse"){
+      return (
+        this.renderBrowseCard()
       )
     } else {
       return (
-        <div className="Flashcard">
-          <div>
-            {this.props.question}
-          </div>
-          <div>
-            {this.props.answer}
-          </div>
-          <button onClick={this.removeCard}>Remove Me!</button>
-        </div>
+        this.renderNonFlipCard()
       )
     }
   }
@@ -73,6 +36,45 @@ class Flashcard extends Component {
     } else if (this.state.display === "back") {
       this.setState({ display: "front" });
     }
+  }
+
+  renderFlipCard() {
+    return  (
+      <div className="Flashcard flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div className="flipper">
+          <div className="front">
+            {this.props.question}
+          </div>
+          <div className="back">
+            {this.props.answer}
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  renderBrowseCard() {
+    return (
+      <div className="Flashcard">
+        <div>
+          {this.props.question}
+        </div>
+        <div>
+          {this.props.answer}
+        </div>
+        <button onClick={this.removeCard}>Remove Me!</button>
+      </div>
+    )
+  }
+
+  renderNonFlipCard() {
+    return (
+      <div className="Flashcard">
+        <div>
+          {this.props.question}
+        </div>
+      </div>
+    )
   }
 
 }

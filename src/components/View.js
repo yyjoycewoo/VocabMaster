@@ -34,12 +34,12 @@ class View extends Component {
 
       return (
         <div className="View">
-          <FlashcardList cards={cards} 
-            addCardToSet={this.addCardToSet} 
-            removeCardFromSet={this.removeCardFromSet} 
-            mode={"test"} />
+          <FlashcardList cards={cards}
+            addCardToSet={this.addCardToSet}
+            removeCardFromSet={this.removeCardFromSet}
+            mode={"browse"} />
           <SetList sets={this.state.sets}
-            updateCurrentSet={this.updateCurrentSet} 
+            updateCurrentSet={this.updateCurrentSet}
             removeSet={this.removeSet}
             addSet={this.addSet}/>
         </div>
