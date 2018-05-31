@@ -62,7 +62,7 @@ class AddItem extends Component {
       );
     } else {
       return (
-        <div className="AddItem card">
+        <div className="AddItem set">
           <input
             type="text"
             name="name"

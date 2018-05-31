@@ -7,14 +7,30 @@ body {
         /* As IE6 ignores !important it will set width as 1000px; */
 }
 
-
+span {
+  margin: auto;
+  text-align: center;
+}
 .card {
   border: 0px !important;
   text-align: center !important;
   margin: 0px;
   padding: 0px !important;
-  width: 200px !important;
-  height: 100px !important;
+
+  box-shadow: 4px 4px #888888;
+  width: 250px;
+  height: 150px;
+}
+
+.set {
+  border: 0px !important;
+  text-align: center !important;
+  margin: 0px;
+  padding: 0px !important;
+
+  box-shadow: 4px 4px #888888;
+  width: 200px;
+  height: 100px;
 }
 
 .delete-button {

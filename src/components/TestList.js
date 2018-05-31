@@ -25,9 +25,10 @@ class TestList extends Component {
           answer={card["answer"]}
           display={this.props.mode} />
 
-          <form className="answer" onSubmit={this.processAnswer}>
+          <form className="answerForm" onSubmit={this.processAnswer}>
             <input
               type="text"
+              className="answer"
               onChange={this.handleUpdate}
               value={this.state.question}
             />
