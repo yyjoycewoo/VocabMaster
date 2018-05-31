@@ -8,7 +8,6 @@ class AddItem extends Component {
     this.handleUpdate = this.handleUpdate.bind(this);
     this.addCard = this.addCard.bind(this);
     this.addSet = this.addSet.bind(this);
-
   }
 
   addCard() {
@@ -30,8 +29,6 @@ class AddItem extends Component {
     this.props.addSet(newSet);
     this.setState({ name: "" });
   }
-
-
 
   handleUpdate(event) {
     const target = event.target;

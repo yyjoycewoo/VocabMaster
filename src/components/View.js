@@ -9,39 +9,62 @@ class View extends Component {
   constructor(props) {
     super(props);
 
-    const sets = this.props.sets
-    const curSet = sets[0]["key"]
+    const sets = this.props.sets;
+    const currSet = sets[0]["key"];
 
     this.state = {
       sets: sets,
-      currentSet: curSet,
-      mode: 'browse'
+      currentSet: currSet,
+      mode: 'browse',
     }
 
     this.updateCurrentSet = this.updateCurrentSet.bind(this);
     this.addCardToSet = this.addCardToSet.bind(this);
     this.addSet = this.addSet.bind(this)
+    this.removeCardFromSet = this.removeCardFromSet.bind(this);
   }
 
   render() {
     if (this.state.mode === 'browse') {
-
-      const cards = this.state.sets.filter(set => {
+      // find the cards belonging to the selected set (default = 0)
+      console.log(this.state.currentSet);
+      console.log(this.state.sets);
+      const getCurrentSet = this.state.sets.filter(set => {
         return set["key"] == this.state.currentSet;
-      })[0]["cards"];
+      });
+      const cards = getCurrentSet[0]["cards"];
+
       return (
         <div className="View">
-          <FlashcardList cards={cards} addCardToSet={this.addCardToSet} mode={"display"} />
-          <SetList sets={this.state.sets} updateCurrentSet={this.updateCurrentSet} addSet={this.addSet}/>
+          <FlashcardList cards={cards} 
+            addCardToSet={this.addCardToSet} 
+            removeCardFromSet={this.removeCardFromSet} 
+            mode={"display"} />
+          <SetList sets={this.state.sets}
+            updateCurrentSet={this.updateCurrentSet} 
+            addSet={this.addSet}/>
         </div>
       )
-    } else {
+    } else { // mode == 'study'
       return (
         <p> nothing here </p>
       )
     }
+  }
 
-
+  removeCardFromSet(setId, cardId) {
+    console.log('before remove', this.state.sets);
+    const updatedSets = this.state.sets.map(set => {
+      if (set["key"] == setId) {
+        const index = set["cards"].findIndex(card => {
+          return card.key == cardId;
+        });
+        set["cards"].splice(index, 1);
+      }
+      return set;
+    })
+    this.setState({ sets: updatedSets });
+    console.log('after remove', this.state.sets);
   }
 
   updateCurrentSet(event) {
@@ -51,21 +74,19 @@ class View extends Component {
   }
 
   addCardToSet(newCard) {
-    var newSets = this.state.sets.map(set => {
+    newCard["setId"] = this.state.currentSet;
+    var updatedSets = this.state.sets.map(set => {
       if (set["key"] == this.state.currentSet) {
-        set["cards"] = [...set["cards"], newCard]
+        set["cards"] = [...set["cards"], newCard];
       }
-      return set
+      return set;
     })
-    this.setState({sets: newSets});
-
+    this.setState({ sets: updatedSets });
   }
 
   addSet(newSet) {
     const sets = [...this.state.sets, newSet];
-    console.log(sets)
-
-    this.setState({sets: sets})
+    this.setState({ sets: sets })
   }
 
 

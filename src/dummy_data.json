@@ -1,17 +1,23 @@
 {
   "sets": [
     {
-      "name": "Set 1",
+      "name": "Chinese",
       "key": 1,
-      "cards": [{"question": "One", "answer": "一", "key": 1},
-      {"question": "Two", "answer": "二", "key": 2},
-      {"question": "Three", "answer": "三", "key": 3}]
+      "cards": [
+        {"question": "one", "answer": "一", "key": 1, "setId": 1},
+        {"question": "two", "answer": "二", "key": 2, "setId": 1},
+        {"question": "three", "answer": "三", "key": 3, "setId": 1},
+        {"question": "four", "answer": "四", "key": 4, "setId": 1}
+      ]
     },
     {
-      "name": "Set 2",
+      "name": "French",
       "key": 2,
-      "cards": [{"question": "One", "answer": "一", "key": 1},
-      {"question": "Two", "answer": "二", "key": 2}]
+      "cards": [
+        {"question": "blue", "answer": "bleu", "key": 1, "setId": 2},
+        {"question": "yellow", "answer": "jeune", "key": 2, "setId": 2},
+        {"question": "red", "answer": "rouge", "key": 3, "setId": 2}
+      ]
     }
   ]
 

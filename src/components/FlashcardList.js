@@ -15,38 +15,33 @@ class FlashcardList extends Component {
 
   constructor(props) {
     super(props);
-    const cards = this.props.cards;
-    const counter = cards.length;
-    this.state = { cards: cards,
-                    keyCounter: counter + 1
-                  };
     this.addCard = this.addCard.bind(this);
     this.removeCard = this.removeCard.bind(this);
   }
 
   renderCards() {
-
     return this.props.cards.map(card => (
-      <Flashcard key={card["key"]} id={card["key"]} question={card["question"]} answer={card["answer"]} removeCard={this.removeCard} display={this.props.mode}/>
+      <Flashcard key={card["key"]} 
+        id={card["key"]}
+        question={card["question"]} 
+        setId={card["setId"]}
+        answer={card["answer"]} 
+        removeCard={this.removeCard} 
+        display={this.props.mode}/>
     ));
   }
 
   addCard(newCard) {
-    newCard["key"] = this.state.keyCounter;
-    this.setState({ cards: [...this.state.cards, newCard], keyCounter: this.state.keyCounter + 1});
+    const keyCounter = this.props.cards.length + 1;
+    newCard["key"] = keyCounter;
     this.props.addCardToSet(newCard);
   }
 
-  removeCard(removeKey) {
-    const filteredCards = this.state.cards.filter(card => {
-      return card["key"] !== removeKey;
-    });
-    this.setState({ cards: filteredCards });
+  removeCard(setId, cardId) {
+    console.log('remove card in flashcard list with id: ', cardId);
+    this.props.removeCardFromSet(setId, cardId);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   this.setState({ cards: nextProps.cards });
-  // }
 }
 
 export default FlashcardList;

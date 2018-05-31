@@ -15,27 +15,20 @@ class SetList extends Component {
 
   constructor(props) {
     super(props);
-    const sets = this.props.sets;
-    const counter = sets.length;
     this.state = {
-      sets: sets,
-      keyCounter: counter + 1
+      keyCounter: this.props.sets.length + 1
     }
-    // this.state = { sets: [{
-    //     cards: [],
-    //     name: "set 1",
-    //     key: 1
-    //   }],
-    //   keyCounter: 2
-    // };
-
     this.addSet = this.addSet.bind(this);
     // this.removeCard = this.removeCard.bind(this);
   }
 
   renderSets() {
     return this.props.sets.map(set => (
-      <Set key={set["key"]} id={set["key"]} name={set["name"]} cards={set["cards"]} onClick={this.props.updateCurrentSet}/>
+      <Set key={set["key"]} 
+        id={set["key"]} 
+        name={set["name"]} 
+        cards={set["cards"]} 
+        onClick={this.props.updateCurrentSet}/>
     ));
   }
 
