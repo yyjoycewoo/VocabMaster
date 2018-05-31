@@ -80,6 +80,7 @@ class View extends Component {
       }
       return set;
     })
+    this.setState({ sets: updatedSets });
   }
 
   addSet(newSet) {
