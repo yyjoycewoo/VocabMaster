@@ -22,7 +22,7 @@ class TestList extends Component {
             display={this.props.mode} />
 
           <form className="answerForm" onSubmit={this.processAnswer}>
-            <input 
+            <input
               type="text"
               className="answer"
               onChange={this.handleUpdate}
@@ -41,10 +41,10 @@ class TestList extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { currentCard: 0, 
+    this.state = { currentCard: 0,
                     currentSet: this.props.currSet,
-                    correctCards: [], 
-                    incorrectCards: [] 
+                    correctCards: [],
+                    incorrectCards: []
                   };
     this.processAnswer = this.processAnswer.bind(this);
     this.goToNextCard = this.goToNextCard.bind(this);

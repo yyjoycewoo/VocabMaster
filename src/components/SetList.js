@@ -21,11 +21,12 @@ class SetList extends Component {
 
   renderSets() {
     return this.props.sets.map(set => (
-      <Set key={set["key"]} 
-        id={set["key"]} 
-        name={set["name"]} 
-        cards={set["cards"]} 
-        removeSet={this.removeSet} 
+      <Set key={set["key"]}
+        id={set["key"]}
+        name={set["name"]}
+        cards={set["cards"]}
+        color={set["color"]}
+        removeSet={this.removeSet}
         onClick={this.props.updateCurrentSet} />
     ));
   }
@@ -33,6 +34,7 @@ class SetList extends Component {
   addSet(newSet) {
     const keyCounter = this.props.sets.length + 1;
     newSet["key"] = keyCounter;
+    newSet["color"] = this.props.pickColor();
     this.props.addSet(newSet);
   }
 
