@@ -1,11 +1,11 @@
 .StudyList {
-  padding: 20px;
+  padding: 0px;
   border: 2px solid #00D8FF;
   background: #DDEEFF;
   grid-area: flashcardList;
 
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 90% minmax(30px, 5%);
   grid-gap: 10px;
   grid-template-areas:

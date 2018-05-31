@@ -42,10 +42,10 @@ class Flashcard extends Component {
     return  (
       <div className="Flashcard flip-container card browseCard" ontouchstart="this.classList.toggle('hover');">
         <div className="flipper">
-          <div className="front">
+          <div className="front text">
             <span>{this.props.question}</span>
           </div>
-          <div className="back">
+          <div className="back text">
             <span>{this.props.answer}</span>
             <button className="delete-button" onClick={this.removeCard}></button>
           </div>
@@ -57,11 +57,11 @@ class Flashcard extends Component {
   renderBrowseCard() {
     return (
       <div className="Flashcard card center studyCard">
-        <div>
+        <div className="text">
           <span>{this.props.question}</span>
         </div>
         <div>
-          <span>{this.props.answer}</span>
+          <span className="text">{this.props.answer}</span>
         </div>
       </div>
     )
@@ -70,7 +70,7 @@ class Flashcard extends Component {
   renderNonFlipCard() {
     return (
       <div className="Flashcard testCard">
-        <div>
+        <div className="text">
           <span>{this.props.question}</span>
         </div>
       </div>
