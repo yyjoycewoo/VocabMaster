@@ -1,4 +1,7 @@
 .TestList {
+  padding: 0px;
+  border: 2px solid #00D8FF;
+  background: #DDEEFF;
   display: flex;
   flex-direction: column;
   justify-content: center;

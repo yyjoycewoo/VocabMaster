@@ -4,7 +4,7 @@ import "../styles/Flashcard.css";
 class Flashcard extends Component {
 
   render() {
-    if (this.props.display === "browse") {
+    if (this.props.display === "browse" || this.props.display === "testResults") {
       return  (
         this.renderFlipCard()
       )
