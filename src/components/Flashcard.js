@@ -12,7 +12,7 @@ class Flashcard extends Component {
       return (
         this.renderBrowseCard()
       )
-    } else {
+    } else { //test mode
       return (
         this.renderNonFlipCard()
       )
