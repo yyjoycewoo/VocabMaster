@@ -3,6 +3,7 @@ import "../styles/View.css";
 import SetList from "./SetList";
 import FlashcardList from "./FlashcardList";
 import StudyList from "./StudyList";
+import TestList from "./TestList";
 
 class View extends Component {
 
@@ -39,7 +40,7 @@ class View extends Component {
                       updateCurrentSet={this.updateCurrentSet} 
                       removeSet={this.removeSet}
                       addSet={this.addSet}/>
-    const testCardList = <StudyList cards={cards} 
+    const testCardList = <TestList cards={cards} 
                           mode={"test"} />
     const studyCardList = <StudyList cards={cards} 
                           mode={"study"} />
