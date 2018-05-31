@@ -26,7 +26,7 @@ class SetList extends Component {
         name={set["name"]} 
         cards={set["cards"]} 
         removeSet={this.removeSet} 
-        onClick={this.props.updateCurrentSet}/>
+        onClick={this.props.updateCurrentSet} />
     ));
   }
 
