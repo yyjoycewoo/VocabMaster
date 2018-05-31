@@ -37,7 +37,7 @@ class View extends Component {
           <FlashcardList cards={cards}
             addCardToSet={this.addCardToSet}
             removeCardFromSet={this.removeCardFromSet}
-            mode={"browse"} />
+            mode={"study"} />
           <SetList sets={this.state.sets}
             updateCurrentSet={this.updateCurrentSet}
             removeSet={this.removeSet}
