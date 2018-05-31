@@ -16,7 +16,7 @@ class TestList extends Component {
 
     return (
       <div className="TestList">
-      { this.isFinishedTest() ? (
+      { this.isFinishedTest() && typeof(card) !== "undefined" ? (
         [
           <Flashcard key={card["key"]} 
             id={card["key"]}

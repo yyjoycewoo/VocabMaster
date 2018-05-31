@@ -111,10 +111,3 @@
   font-family: arial;
   line-height: 2em;
 }
-
-.studyCard {
-  width: 400px;
-  background: #66B8Bf;
-
-  height: calc(width * 0.75);
-}
