@@ -5,5 +5,10 @@
   grid-gap: 10px;
   grid-template-rows: auto;
   grid-template-areas:
+    "setList modes"
     "setList flashcardList";
+}
+
+.Modes {
+  grid-area: modes;
 }

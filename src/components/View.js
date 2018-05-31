@@ -24,6 +24,7 @@ class View extends Component {
     this.addSet = this.addSet.bind(this)
     this.removeCardFromSet = this.removeCardFromSet.bind(this);
     this.removeSet = this.removeSet.bind(this);
+    this.updateMode = this.updateMode.bind(this);
   }
 
   render() {
@@ -31,13 +32,23 @@ class View extends Component {
     const getCurrentSet = this.state.sets
       .filter(set => (set["key"] == this.state.currentSet))[0];
     const cards = (typeof getCurrentSet !== 'undefined') ? getCurrentSet["cards"] : [];
+
+    const browseButton = <button onClick={this.updateMode} name="browse">Browse Mode</button>;
+    const studyButton = <button onClick={this.updateMode}  name="study">Study Mode</button>;
+    const testButton = <button onClick={this.updateMode} name="test">Test Mode</button>;
+    
     if (this.state.mode === 'browse') {
       return (
         <div className="View">
-          <FlashcardList cards={cards}
-            addCardToSet={this.addCardToSet}
-            removeCardFromSet={this.removeCardFromSet}
-            mode={"study"} />
+          <div className="Modes">
+            {browseButton}
+            {studyButton}
+            {testButton}
+          </div>
+          <FlashcardList cards={cards} 
+            addCardToSet={this.addCardToSet} 
+            removeCardFromSet={this.removeCardFromSet} 
+            mode={"browse"} />
           <SetList sets={this.state.sets}
             updateCurrentSet={this.updateCurrentSet}
             removeSet={this.removeSet}
@@ -47,8 +58,29 @@ class View extends Component {
     } else if (this.state.mode === 'study') {
       return (
         <div className="View">
-          <StudyList cards={cards}
-            mode={"study"}/>
+          <div className="Modes">
+            {browseButton}
+            {studyButton}
+            {testButton}
+          </div>
+          <StudyList cards={cards} 
+            mode={"study"} />
+          <SetList sets={this.state.sets}
+            updateCurrentSet={this.updateCurrentSet} 
+            removeSet={this.removeSet}
+            addSet={this.addSet}/>
+        </div>
+      )
+    } else if (this.state.mode === 'test') {
+      return (
+        <div className="View">
+          <div className="Modes">
+            {browseButton}
+            {studyButton}
+            {testButton}
+          </div>
+          <StudyList cards={cards} 
+            mode={"test"} />
           <SetList sets={this.state.sets}
             updateCurrentSet={this.updateCurrentSet}
             removeSet={this.removeSet}
@@ -56,6 +88,11 @@ class View extends Component {
         </div>
       )
     }
+  }
+
+  updateMode(event) {
+    console.log(event.target);
+    this.setState({mode: event.target.name});
   }
 
   removeCardFromSet(setId, cardId) {
