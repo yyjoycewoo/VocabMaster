@@ -37,7 +37,6 @@ class SetList extends Component {
   }
 
   removeSet(setId) {
-    console.log('in set list')
     this.props.removeSet(setId);
   }
 }

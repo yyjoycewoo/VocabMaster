@@ -32,16 +32,12 @@ class View extends Component {
         .filter(set => (set["key"] == this.state.currentSet))[0];
       const cards = (typeof getCurrentSet !== 'undefined') ? getCurrentSet["cards"] : [];
 
-      console.log(this.state.currentSet);
-      console.log(this.state.sets);
-      console.log('cards', cards);
-
       return (
         <div className="View">
           <FlashcardList cards={cards} 
             addCardToSet={this.addCardToSet} 
             removeCardFromSet={this.removeCardFromSet} 
-            mode={"display"} />
+            mode={"test"} />
           <SetList sets={this.state.sets}
             updateCurrentSet={this.updateCurrentSet} 
             removeSet={this.removeSet}
@@ -67,9 +63,13 @@ class View extends Component {
   }
 
   updateCurrentSet(event) {
-    const target = event.target;
-    const id = target.dataset.id;
-    this.setState({currentSet: id});
+    if (event.target !== event.currentTarget) {
+      this.setState({currentSet: this.state.currentSet});
+    } else {
+      const target = event.target;
+      const id = target.dataset.id;
+      this.setState({currentSet: id});
+    }
   }
 
   addCardToSet(newCard) {
@@ -91,10 +91,7 @@ class View extends Component {
   removeSet(setId) {
     const index = this.state.sets.findIndex(set => (set["key"] == setId));
     this.state.sets.splice(index, 1);
-    console.log(this.state.sets)
   }
-
-
 }
 
 export default View;
