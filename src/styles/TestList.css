@@ -10,9 +10,10 @@
   border: 2px solid #00D8FF;
   background: #66B8Bf;
   font-size: 300%;
-  flex: 6;
+  /* flex: 6; */
   margin: 5px;
-  width: 100%;
+  width: 500px;
+  height: 300px;
   /* display: grid;
   grid-template-columns: 33% 33% 33%;
   grid-template-rows: 90% minmax(30px, 5%);
@@ -23,16 +24,26 @@
   align-items: center; */
 }
 
+.testCard span {
+  margin: auto;
+}
+
 .answerForm {
   /* grid-area: answer; */
-  width: 80%;
-  flex: 1;
+  /* flex: 1; */
   margin: 5px;
-  width: 100%;
+  width: 500px;
+}
+
+.answerForm input {
+  height: 50px;
+  border: 2px solid black; 
+  font-size: 150%;
+  text-align: center;
 }
 
 .accuracy {
-  flex: 1;
+  /* flex: 1; */
   margin: 5px;
   width: 100%;
 }
