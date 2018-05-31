@@ -40,7 +40,7 @@ class Flashcard extends Component {
 
   renderFlipCard() {
     return  (
-      <div className="Flashcard flip-container" ontouchstart="this.classList.toggle('hover');">
+      <div className="Flashcard flip-container card" ontouchstart="this.classList.toggle('hover');">
         <div className="flipper">
           <div className="front">
             {this.props.question}
@@ -55,7 +55,7 @@ class Flashcard extends Component {
 
   renderBrowseCard() {
     return (
-      <div className="Flashcard">
+      <div className="Flashcard card">
         <div>
           {this.props.question}
         </div>
@@ -69,7 +69,7 @@ class Flashcard extends Component {
 
   renderNonFlipCard() {
     return (
-      <div className="Flashcard">
+      <div className="Flashcard card">
         <div>
           {this.props.question}
         </div>

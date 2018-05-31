@@ -40,7 +40,7 @@ class AddItem extends Component {
   render() {
     if (this.props.type === "flashcard") {
       return (
-        <div className="AddItem">
+        <div className="AddItem card">
           <input
             type="text"
             name="question"
@@ -62,7 +62,7 @@ class AddItem extends Component {
       );
     } else {
       return (
-        <div className="AddItem">
+        <div className="AddItem card">
           <input
             type="text"
             name="name"
