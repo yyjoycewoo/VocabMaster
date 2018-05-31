@@ -1,6 +1,15 @@
 {
   "sets": [
     {
+      "name": "French",
+      "key": 2,
+      "cards": [
+        {"question": "blue", "answer": "bleu", "key": 1, "setId": 2},
+        {"question": "yellow", "answer": "jeune", "key": 2, "setId": 2},
+        {"question": "red", "answer": "rouge", "key": 3, "setId": 2}
+      ]
+    },
+    {
       "name": "Chinese",
       "key": 1,
       "cards": [
@@ -8,15 +17,6 @@
         {"question": "two", "answer": "二", "key": 2, "setId": 1},
         {"question": "three", "answer": "三", "key": 3, "setId": 1},
         {"question": "four", "answer": "四", "key": 4, "setId": 1}
-      ]
-    },
-    {
-      "name": "French",
-      "key": 2,
-      "cards": [
-        {"question": "blue", "answer": "bleu", "key": 1, "setId": 2},
-        {"question": "yellow", "answer": "jeune", "key": 2, "setId": 2},
-        {"question": "red", "answer": "rouge", "key": 3, "setId": 2}
       ]
     },
     {
