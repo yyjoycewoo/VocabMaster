@@ -39,17 +39,18 @@ class View extends Component {
     const studyButton = <button onClick={this.updateMode}  name="study">Study Mode</button>;
     const testButton = <button onClick={this.updateMode} name="test">Test Mode</button>;
     const setList = <SetList sets={this.state.sets}
-                      updateCurrentSet={this.updateCurrentSet} 
+                      updateCurrentSet={this.updateCurrentSet}
                       removeSet={this.removeSet}
-                      addSet={this.addSet}/>
+                      addSet={this.addSet}
+                      pickColor={this.pickColor}/>
     const testCardList = <TestList cards={cards}
                           currSet={this.state.currentSet}
                           mode={"test"} />
-    const studyCardList = <StudyList cards={cards} 
+    const studyCardList = <StudyList cards={cards}
                           mode={"study"} />
-    const browseCardList = <BrowseList cards={cards} 
-                            addCardToSet={this.addCardToSet} 
-                            removeCardFromSet={this.removeCardFromSet} 
+    const browseCardList = <BrowseList cards={cards}
+                            addCardToSet={this.addCardToSet}
+                            removeCardFromSet={this.removeCardFromSet}
                             mode={"browse"} />
 
     return (
@@ -58,8 +59,8 @@ class View extends Component {
         {browseButton}
         {studyButton}
         {testButton}
-      </div> 
-    
+      </div>
+
       { (this.state.mode === 'browse') && browseCardList }
       { (this.state.mode === 'study') && studyCardList }
       { (this.state.mode === 'test') && testCardList }
@@ -98,6 +99,7 @@ class View extends Component {
     newCard["setId"] = this.state.currentSet;
     var updatedSets = this.state.sets.map(set => {
       if (set["key"] == this.state.currentSet) {
+        newCard["color"] = set["color"]
         set["cards"] = [...set["cards"], newCard];
       }
       return set;
@@ -113,6 +115,11 @@ class View extends Component {
   removeSet(setId) {
     const index = this.state.sets.findIndex(set => (set["key"] == setId));
     this.state.sets.splice(index, 1);
+  }
+
+  pickColor(){
+    const colors = ["red", "blue", "green", "yellow", "pink", "purple", "orange"]
+    return colors[Math.floor(Math.random() * colors.length)];
   }
 }
 

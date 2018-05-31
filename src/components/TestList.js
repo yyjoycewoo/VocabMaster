@@ -18,15 +18,16 @@ class TestList extends Component {
       <div className="TestList">
       { this.isFinishedTest() && typeof(card) !== "undefined" ? (
         [
-          <Flashcard key={card["key"]} 
+          <Flashcard key={card["key"]}
             id={card["key"]}
             setId={card["setId"]}
-            question={card["question"]} 
-            answer={card["answer"]} 
+            question={card["question"]}
+            answer={card["answer"]}
+            color={card["color"]}
             display={this.props.mode} />,
 
           <form className="answerForm" onSubmit={this.processAnswer}>
-            <input 
+            <input
               type="text"
               className="answer"
               onChange={this.handleUpdate}
@@ -44,10 +45,10 @@ class TestList extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { currentCard: 0, 
+    this.state = { currentCard: 0,
                     currentSet: this.props.currSet,
-                    correctCards: [], 
-                    incorrectCards: [] 
+                    correctCards: [],
+                    incorrectCards: []
                   };
     this.processAnswer = this.processAnswer.bind(this);
     this.goToNextCard = this.goToNextCard.bind(this);
@@ -61,7 +62,7 @@ class TestList extends Component {
     console.log('prev state', prevState);
     if (nextProps.currSet != prevState.currentSet) {
       console.log('in if')
-      return { currentCard: 0, 
+      return { currentCard: 0,
                 currentSet: nextProps.currSet,
                 correctCards: [],
                 incorrectCards: []

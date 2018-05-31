@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import "../styles/BrowseList.css";
+import "../styles/FlashcardList.css";
 import Flashcard from "./Flashcard";
 import AddItem from "./AddItem";
 
-class BrowseList extends Component {
+class FlashcardList extends Component {
   render() {
     return (
-      <div className="BrowseList">
+      <div className="FlashcardList">
         {this.renderCards()}
         <AddItem addCard={this.addCard} type="flashcard" />
       </div>
@@ -27,8 +27,7 @@ class BrowseList extends Component {
         setId={card["setId"]}
         answer={card["answer"]}
         removeCard={this.removeCard}
-        display={this.props.mode}
-        color={card["color"]}/>
+        display={this.props.mode}/>
     ));
   }
 
@@ -42,8 +41,6 @@ class BrowseList extends Component {
     this.props.removeCardFromSet(setId, cardId);
   }
 
-
-
 }
 
-export default BrowseList;
+export default FlashcardList;
