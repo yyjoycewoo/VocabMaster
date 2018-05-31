@@ -69,7 +69,7 @@ class Flashcard extends Component {
 
   renderNonFlipCard() {
     return (
-      <div className="Flashcard card center testCard">
+      <div className="Flashcard testCard">
         <div>
           <span>{this.props.question}</span>
         </div>

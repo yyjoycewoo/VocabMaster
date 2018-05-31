@@ -113,12 +113,7 @@
   line-height: 2em;
 }
 
-.testCard {
-  background: #66B8Bf;
-
-}
-
-.testCard, .studyCard {
+.studyCard {
   width: 400px;
   height: calc(width * 0.75);
 }
