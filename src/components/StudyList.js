@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import "../styles/FlashcardList.css";
+//import "../styles/FlashcardList.css";
+import "../styles/StudyList.css";
+
 import Flashcard from "./Flashcard";
 
 class StudyList extends Component {
@@ -25,11 +27,11 @@ class StudyList extends Component {
     const numCards = this.props.cards.length;
     return (
       <div className="StudyList">
-        <Flashcard key={card["key"]} 
+        <Flashcard key={card["key"]}
           id={card["key"]}
           setId={card["setId"]}
-          question={card["question"]} 
-          answer={card["answer"]} 
+          question={card["question"]}
+          answer={card["answer"]}
           display={this.props.mode} />
         <button onClick={this.updateCard}>Next</button>
         <div>Progress: {currCard+1} / {numCards}</div>
@@ -43,11 +45,11 @@ class StudyList extends Component {
     const numCards = this.props.cards.length;
     return (
       <div className="StudyList">
-        <Flashcard key={card["key"]} 
+        <Flashcard key={card["key"]}
           id={card["key"]}
           setId={card["setId"]}
-          question={card["question"]} 
-          answer={card["answer"]} 
+          question={card["question"]}
+          answer={card["answer"]}
           display={this.props.mode} />
         <button onClick={this.updateCard}>Next</button>
         <div>Accuracy: {currCard+1} / {numCards}</div>
