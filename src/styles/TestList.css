@@ -1,3 +1,27 @@
-.TestList {
+.testCards {
+  padding: 20px;
+  border: 2px solid #00D8FF;
+  background: #DDEEFF;
+
+
   display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 90% minmax(30px, 5%);
+  grid-gap: 10px;
+  grid-template-areas:
+    ". center ."
+    ". answer .";
+  align-items: center;
+}
+
+
+.center {
+  grid-area: center;
+  margin: auto;
+}
+
+
+
+.answer {
+  grid-area: answer;
 }

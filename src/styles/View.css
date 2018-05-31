@@ -3,7 +3,7 @@
   grid-template-columns: minmax(250px, 20%) minmax(250px, 80%);
 
   grid-gap: 10px;
-  grid-template-rows: auto;
+  grid-template-rows: minmax(30px, 5%) 90%;
   grid-template-areas:
     "setList modes"
     "setList flashcardList";

@@ -17,18 +17,17 @@ class TestList extends Component {
     return (
       <div className="TestList">
       { this.isFinishedTest() ? (
-        <div>
-          <Flashcard key={card["key"]} 
+        <div className="testCards">
+          <Flashcard key={card["key"]}
           id={card["key"]}
           setId={card["setId"]}
-          question={card["question"]} 
-          answer={card["answer"]} 
+          question={card["question"]}
+          answer={card["answer"]}
           display={this.props.mode} />
-        
-          <form onSubmit={this.processAnswer}>
-            <input 
+
+          <form className="answer" onSubmit={this.processAnswer}>
+            <input
               type="text"
-              class="answer"
               onChange={this.handleUpdate}
               value={this.state.question}
             />
@@ -76,7 +75,7 @@ class TestList extends Component {
     const answer = document.querySelector(".answer");
     const currCardIndex = this.state.currentCard;
     const card = this.props.cards[currCardIndex];
-    
+
     if (card.answer === answer.value) {
       this.setState({correctCards: [...this.state.correctCards, card]});
     } else {
