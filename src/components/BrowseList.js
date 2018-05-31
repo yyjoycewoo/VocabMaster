@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import "../styles/FlashcardList.css";
+import "../styles/BrowseList.css";
 import Flashcard from "./Flashcard";
 import AddItem from "./AddItem";
 
-class FlashcardList extends Component {
+class BrowseList extends Component {
   render() {
     return (
-      <div className="FlashcardList">
+      <div className="BrowseList">
         {this.renderCards()}
         <AddItem addCard={this.addCard} type="flashcard" />
       </div>
@@ -43,4 +43,4 @@ class FlashcardList extends Component {
 
 }
 
-export default FlashcardList;
+export default BrowseList;

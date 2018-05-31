@@ -10,7 +10,7 @@ class Flashcard extends Component {
       )
     } else if (this.props.display === "study"){
       return (
-        this.renderBrowseCard()
+        this.renderStudyCard()
       )
     } else { //test mode
       return (
@@ -54,7 +54,7 @@ class Flashcard extends Component {
     )
   }
 
-  renderBrowseCard() {
+  renderStudyCard() {
     return (
       <div className="Flashcard card center studyCard">
         <div className="text">

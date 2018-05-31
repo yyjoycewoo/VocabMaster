@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../styles/View.css";
 import SetList from "./SetList";
-import FlashcardList from "./FlashcardList";
+import BrowseList from "./BrowseList";
 import StudyList from "./StudyList";
 import TestList from "./TestList";
 
@@ -16,7 +16,7 @@ class View extends Component {
     this.state = {
       sets: sets,
       currentSet: currSet,
-      mode: 'test',
+      mode: 'study',
     }
 
     this.updateCurrentSet = this.updateCurrentSet.bind(this);
@@ -47,7 +47,7 @@ class View extends Component {
                           mode={"test"} />
     const studyCardList = <StudyList cards={cards} 
                           mode={"study"} />
-    const browseCardList = <FlashcardList cards={cards} 
+    const browseCardList = <BrowseList cards={cards} 
                             addCardToSet={this.addCardToSet} 
                             removeCardFromSet={this.removeCardFromSet} 
                             mode={"browse"} />

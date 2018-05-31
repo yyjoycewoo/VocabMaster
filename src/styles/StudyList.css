@@ -2,8 +2,12 @@
   padding: 0px;
   border: 2px solid #00D8FF;
   background: #DDEEFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   grid-area: flashcardList;
-
+  /*
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 90% minmax(30px, 5%);
@@ -11,9 +15,18 @@
   grid-template-areas:
     ". center ."
     "next . progress";
-  align-items: center;
+  align-items: center; */
 }
 
+.studyCard {
+  padding: 20px;
+  border: 2px solid #00D8FF;
+  background: #66B8Bf;
+  font-size: 300%;
+  margin: 5px;
+  width: 500px;
+  height: 300px;
+}
 
 .center {
   grid-area: center;

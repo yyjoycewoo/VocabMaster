@@ -5,18 +5,23 @@ import Flashcard from "./Flashcard";
 class StudyList extends Component {
   render() {
     const currCard = this.state.currentCard;
-    const card = this.props.cards[currCard];
     const numCards = this.props.cards.length;
+    const card = this.props.cards[currCard];
+
+    console.log(typeof(card))
     return (
       <div className="StudyList">
-        <Flashcard key={card["key"]}
-          id={card["key"]}
-          setId={card["setId"]}
-          question={card["question"]}
-          answer={card["answer"]}
-          display={this.props.mode} />
-        <button className="next" onClick={this.goToNextCard}>Next</button>
-        <div className="progress" >Progress: {currCard+1} / {numCards}</div>
+        { typeof(card) !== "undefined" && [
+          <Flashcard key={card["key"]}
+            id={card["key"]}
+            setId={card["setId"]}
+            question={card["question"]}
+            answer={card["answer"]}
+            display={this.props.mode} />,
+          <button className="next" onClick={this.goToNextCard}>Next</button>,
+          <div className="progress" >Progress: {currCard+1} / {numCards}</div>
+        ]
+        }
       </div>
     )
   }
