@@ -15,11 +15,8 @@ class SetList extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      keyCounter: this.props.sets.length + 1
-    }
     this.addSet = this.addSet.bind(this);
-    // this.removeCard = this.removeCard.bind(this);
+    this.removeSet = this.removeSet.bind(this);
   }
 
   renderSets() {
@@ -28,23 +25,21 @@ class SetList extends Component {
         id={set["key"]} 
         name={set["name"]} 
         cards={set["cards"]} 
+        removeSet={this.removeSet} 
         onClick={this.props.updateCurrentSet}/>
     ));
   }
 
   addSet(newSet) {
-    console.log(newSet)
-    newSet["key"] = this.state.keyCounter;
-    this.setState({keyCounter: this.state.keyCounter + 1})
-    this.props.addSet(newSet)
+    const keyCounter = this.props.sets.length + 1;
+    newSet["key"] = keyCounter;
+    this.props.addSet(newSet);
   }
 
-  // removeCard(removeKey) {
-  //   const filteredCards = this.state.cards.filter(card => {
-  //     return card["key"] !== removeKey;
-  //   });
-  //   this.setState({ cards: filteredCards });
-  // }
+  removeSet(setId) {
+    console.log('in set list')
+    this.props.removeSet(setId);
+  }
 }
 
 export default SetList;

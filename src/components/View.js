@@ -22,17 +22,19 @@ class View extends Component {
     this.addCardToSet = this.addCardToSet.bind(this);
     this.addSet = this.addSet.bind(this)
     this.removeCardFromSet = this.removeCardFromSet.bind(this);
+    this.removeSet = this.removeSet.bind(this);
   }
 
   render() {
     if (this.state.mode === 'browse') {
       // find the cards belonging to the selected set (default = 0)
+      const getCurrentSet = this.state.sets
+        .filter(set => (set["key"] == this.state.currentSet))[0];
+      const cards = (typeof getCurrentSet !== 'undefined') ? getCurrentSet["cards"] : [];
+
       console.log(this.state.currentSet);
       console.log(this.state.sets);
-      const getCurrentSet = this.state.sets.filter(set => {
-        return set["key"] == this.state.currentSet;
-      });
-      const cards = getCurrentSet[0]["cards"];
+      console.log('cards', cards);
 
       return (
         <div className="View">
@@ -42,6 +44,7 @@ class View extends Component {
             mode={"display"} />
           <SetList sets={this.state.sets}
             updateCurrentSet={this.updateCurrentSet} 
+            removeSet={this.removeSet}
             addSet={this.addSet}/>
         </div>
       )
@@ -53,18 +56,14 @@ class View extends Component {
   }
 
   removeCardFromSet(setId, cardId) {
-    console.log('before remove', this.state.sets);
     const updatedSets = this.state.sets.map(set => {
       if (set["key"] == setId) {
-        const index = set["cards"].findIndex(card => {
-          return card.key == cardId;
-        });
+        const index = set["cards"].findIndex(card => (card.key == cardId))
         set["cards"].splice(index, 1);
       }
       return set;
     })
     this.setState({ sets: updatedSets });
-    console.log('after remove', this.state.sets);
   }
 
   updateCurrentSet(event) {
@@ -81,12 +80,17 @@ class View extends Component {
       }
       return set;
     })
-    this.setState({ sets: updatedSets });
   }
 
   addSet(newSet) {
     const sets = [...this.state.sets, newSet];
     this.setState({ sets: sets })
+  }
+
+  removeSet(setId) {
+    const index = this.state.sets.findIndex(set => (set["key"] == setId));
+    this.state.sets.splice(index, 1);
+    console.log(this.state.sets)
   }
 
 

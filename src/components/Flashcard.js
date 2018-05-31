@@ -28,7 +28,7 @@ class Flashcard extends Component {
   // }
 
   render() {
-    if (this.props.display == "test") {
+    if (this.props.display === "test") {
       return  (
         <div className="Flashcard flip-container" ontouchstart="this.classList.toggle('hover');">
           <div className="flipper">
@@ -64,7 +64,6 @@ class Flashcard extends Component {
   }
 
   removeCard() {
-    console.log("calling remove card in flashcard ", this.props);
     this.props.removeCard(this.props.setId, this.props.id);
   }
 

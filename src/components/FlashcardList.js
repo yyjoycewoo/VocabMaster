@@ -38,7 +38,6 @@ class FlashcardList extends Component {
   }
 
   removeCard(setId, cardId) {
-    console.log('remove card in flashcard list with id: ', cardId);
     this.props.removeCardFromSet(setId, cardId);
   }
 
