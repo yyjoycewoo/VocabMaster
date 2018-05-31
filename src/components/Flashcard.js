@@ -8,7 +8,7 @@ class Flashcard extends Component {
       return  (
         this.renderFlipCard()
       )
-    } else if (this.props.display === "test"){
+    } else if (this.props.display === "study"){
       return (
         this.renderBrowseCard()
       )
