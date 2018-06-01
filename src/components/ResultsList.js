@@ -20,6 +20,7 @@ class ResultsList extends Component {
           (<Flashcard key={card["key"]}
             id={card["key"]}
             question={card["question"]}
+            color={card["color"]}
             setId={card["setId"]}
             answer={card["answer"]}
             removeCard={this.removeCard}
@@ -32,6 +33,7 @@ class ResultsList extends Component {
           (<Flashcard key={card["key"]}
             id={card["key"]}
             question={card["question"]}
+            color={card["color"]}
             setId={card["setId"]}
             answer={card["answer"]}
             removeCard={this.removeCard}

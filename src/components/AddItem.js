@@ -40,23 +40,25 @@ class AddItem extends Component {
   render() {
     if (this.props.type === "flashcard") {
       return (
-        <div className="AddItem card">
+        <div className="AddItem customCard">
           <input
             type="text"
             name="question"
-            className="input"
+            id="question"
+            className="input form-control"
+            placeholder="Question"
             onChange={this.handleUpdate}
             value={this.state.question}
           />
           <input
             type="text"
             name="answer"
-            className="input"
+            className="input form-control"
+            placeholder="Answer"
             onChange={this.handleUpdate}
             value={this.state.answer}
           />
-          &nbsp;&nbsp;
-          <button onClick={this.addCard}>Add</button>
+          <button className="btn btn-dark" onClick={this.addCard}>Add</button>
 
         </div>
       );
@@ -66,12 +68,13 @@ class AddItem extends Component {
           <input
             type="text"
             name="name"
-            className="input"
+            className="input form-control"
+            placeholder="Set Name"
             onChange={this.handleUpdate}
             value={this.state.name}
           />
-          &nbsp;&nbsp;
-          <button onClick={this.addSet}>Add</button>
+          <br/>
+          <button className="btn btn-dark" onClick={this.addSet}>Add</button>
         </div>
 
       );

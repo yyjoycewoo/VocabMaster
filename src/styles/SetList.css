@@ -1,7 +1,6 @@
 .SetList {
     padding: 20px;
-    border: 2px solid #00D8FF;
-    background: #DDEEEE;
+    background: #4f372d;
     height: 90vh;
     overflow: auto;
 
@@ -10,5 +9,7 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 10px;
-    grid-auto-rows: minmax(100px, auto);
+
+    grid-auto-rows: auto;
+
   }

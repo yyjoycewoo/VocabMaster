@@ -10,7 +10,11 @@
 }
 
 .Modes {
-  background: #ddd;
+  background: #fffef9;
   grid-area: modes;
   height: 5vh;
+}
+
+.btn {
+  margin: 5px;
 }

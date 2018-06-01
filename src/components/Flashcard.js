@@ -40,14 +40,15 @@ class Flashcard extends Component {
 
   renderFlipCard() {
     return  (
-      <div className="Flashcard flip-container card browseCard" ontouchstart="this.classList.toggle('hover');">
+      <div className="Flashcard flip-container customCard browseCard">
         <div className="flipper">
-          <div className="front text" style={{background: this.props.color}}>
+          <div className="cardFront text" style={{background: this.props.color}}>
             <span>{this.props.question}</span>
           </div>
-          <div className="back text" style={{background: "grey"}}>
+          <div className="cardBack text" style={{background: "#5D535E"}}>
             <span>{this.props.answer}</span>
-            <button className="delete-button" onClick={this.removeCard}></button>
+            <br/>
+            <button className="btn btn-outline-danger" onClick={this.removeCard}>Delete</button>
           </div>
         </div>
       </div>
@@ -56,7 +57,7 @@ class Flashcard extends Component {
 
   renderStudyCard() {
     return (
-      <div className="Flashcard card center studyCard" style={{background: this.props.color}}>
+      <div className="Flashcard customCard center studyCard" style={{background: this.props.color}}>
         <div className="text">
           <span>{this.props.question}</span>
         </div>

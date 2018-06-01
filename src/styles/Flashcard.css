@@ -7,6 +7,10 @@
   align-items: center;
 }
 
+.Flashcard.tst .Flashcard.cls {
+  margin: auto !important;
+}
+
 .browseCard {
   color: black;
 }
@@ -28,7 +32,7 @@
 
 	}
 
-.flip-container, .front, .back {
+.flip-container, .cardFront, .cardBack {
 
 }
 
@@ -50,7 +54,7 @@
 
 }
 
-.front, .back {
+.cardFront, .cardBack {
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
   -o-backface-visibility: hidden;
@@ -61,14 +65,14 @@
 	left: 0;
 }
 
-.front {
+.cardFront {
   color: white;
 	z-index: 2;
   width: 100%;
   height: 100%;
 }
 
-.back {
+.cardBack {
 	-webkit-transform: rotateY(180deg);
 	-moz-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);
@@ -80,7 +84,7 @@
 
 }
 
-.front .name {
+.cardFront .name {
 	font-size: 2em;
 	display: inline-block;
 	background: rgba(33, 33, 33, 0.9);
@@ -99,7 +103,7 @@
 	transform: rotate(-20deg);
 }
 
-.back p {
+.cardBack p {
 	position: absolute;
 	bottom: 40px;
 	left: 0;

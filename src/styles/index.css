@@ -20,7 +20,7 @@ span {
   transform: translateY(-50%);
 } */
 
-.card {
+.customCard {
   border: 0px !important;
   text-align: center !important;
   margin: auto;
@@ -36,7 +36,6 @@ span {
   margin: 0px;
   padding: 0px !important;
 
-  box-shadow: 4px 4px #888888;
   width: 200px;
   height: 100px;
 }

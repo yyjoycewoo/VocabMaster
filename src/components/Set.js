@@ -5,8 +5,9 @@ class Set extends Component {
   render() {
     return (
       <div onClick={this.props.onClick} className="Set set" data-id={this.props.id} style={{background: this.props.color}}>
-        {this.props.name}
-        <button className="delete-button" onClick={this.removeSet}></button>
+        <span>{this.props.name}</span>
+        <br/>
+        <button className="btn btn-outline-danger" onClick={this.removeSet}>Delete</button>
       </div>
     );
   }

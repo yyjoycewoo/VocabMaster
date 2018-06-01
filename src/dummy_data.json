@@ -3,30 +3,30 @@
     {
       "name": "French",
       "key": 1,
-      "color": "red",
+      "color": "#96ceb4",
       "cards": [
-        {"question": "blue", "answer": "bleu", "key": 1, "setId": 1, "color": "red"},
-        {"question": "yellow", "answer": "jeune", "key": 2, "setId": 1, "color": "red"},
-        {"question": "red", "answer": "rouge", "key": 3, "setId": 1, "color": "red"}
+        {"question": "blue", "answer": "bleu", "key": 1, "setId": 1, "color": "#96ceb4"},
+        {"question": "yellow", "answer": "jeune", "key": 2, "setId": 1, "color": "#96ceb4"},
+        {"question": "red", "answer": "rouge", "key": 3, "setId": 1, "color": "#96ceb4"}
       ]
     },
     {
       "name": "Chinese",
       "key": 2,
-      "color": "green",
+      "color": "#ffcc5c",
       "cards": [
-        {"question": "one", "answer": "一", "key": 1, "setId": 2, "color": "green"},
-        {"question": "two", "answer": "二", "key": 2, "setId": 2, "color": "green"},
-        {"question": "three", "answer": "三", "key": 3, "setId": 2, "color": "green"},
-        {"question": "four", "answer": "四", "key": 4, "setId": 2, "color": "green"}
+        {"question": "one", "answer": "一", "key": 1, "setId": 2, "color": "#ffcc5c"},
+        {"question": "two", "answer": "二", "key": 2, "setId": 2, "color": "#ffcc5c"},
+        {"question": "three", "answer": "三", "key": 3, "setId": 2, "color": "#ffcc5c"},
+        {"question": "four", "answer": "四", "key": 4, "setId": 2, "color": "#ffcc5c"}
       ]
     },
     {
       "name": "Korean",
       "key": 3,
-      "color": "pink",
+      "color": "#ff6f69",
       "cards": [
-        {"question": "hello", "answer": "안녕하세요", "key": 1, "setId": 3, "color": "pink"}
+        {"question": "hello", "answer": "안녕하세요", "key": 1, "setId": 3, "color": "#ff6f69"}
       ]
     }
   ]

@@ -3,11 +3,11 @@
 }
 
 .App {
-  border: 2px solid black;
   text-align: center;
   color: #333;
   margin: 20px;
   padding: 20px;
+  background: #fffef9;
 }
 
 .App-logo {
