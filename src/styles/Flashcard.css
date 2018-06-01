@@ -22,16 +22,12 @@
 
 }
 
-	.flip-container:hover .flipper,
-  .flip-container.hover .flipper {
-		-webkit-transform: rotateY(180deg);
-		-moz-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
-		transform: rotateY(180deg);
-
-	}
-
-.flip-container, .cardFront, .cardBack {
+.flip-container:hover .flipper,
+.flip-container.hover .flipper {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
 
 }
 
@@ -117,5 +113,8 @@
   /* background: #66B8Bf; */
 
   width: 500px;
-  height: 300px;
+	height: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 }

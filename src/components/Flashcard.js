@@ -59,10 +59,10 @@ class Flashcard extends Component {
     return (
       <div className="Flashcard customCard center studyCard" style={{background: this.props.color}}>
         <div className="text">
-          <span>{this.props.question}</span>
+          <p className="question">{this.props.question}</p>
         </div>
         <div>
-          <span className="text">{this.props.answer}</span>
+          <p className="text answer">{this.props.answer}</p>
         </div>
       </div>
     )
