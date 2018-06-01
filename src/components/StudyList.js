@@ -19,7 +19,7 @@ class StudyList extends Component {
             answer={card["answer"]}
             color={card["color"]}
             display={this.props.mode} />,
-          <button className="next" onClick={this.goToNextCard}>Next</button>,
+          <button className="next btn btn-secondary" onClick={this.goToNextCard}>Next</button>,
           <div className="progress" >Progress: {currCard+1} / {numCards}</div>
         ]
         }

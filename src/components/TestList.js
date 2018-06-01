@@ -14,18 +14,19 @@ class TestList extends Component {
     if (this.isFinishedTest() && typeof(card) !== "undefined") {
       return (
         <div className="TestList">
-          <Flashcard key={card["key"]} 
+          <Flashcard key={card["key"]}
             id={card["key"]}
             setId={card["setId"]}
-            question={card["question"]} 
-            answer={card["answer"]} 
+            question={card["question"]}
+            answer={card["answer"]}
             color={card["color"]}
             display={this.props.mode} />
 
-          <form className="answerForm" onSubmit={this.processAnswer}>
+          <form className="" onSubmit={this.processAnswer}>
             <input
               type="text"
-              className="answer"
+              className="answer form-control"
+              placeholder="answer here"
               onChange={this.handleUpdate}
               value={this.state.question}
             />
@@ -54,7 +55,7 @@ class TestList extends Component {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.currSet != prevState.currentSet) {
-      return { currentCard: 0, 
+      return { currentCard: 0,
                 currentSet: nextProps.currSet,
                 correctCards: [],
                 incorrectCards: []

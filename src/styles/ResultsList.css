@@ -1,7 +1,6 @@
 .ResultsList {
   padding: 0px;
-  border: 2px solid #00D8FF;
-  background: #DDEEFF;
+  background: #fffef9;
   justify-content: center;
   grid-area: flashcardList;
 
