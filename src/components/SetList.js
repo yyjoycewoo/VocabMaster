@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import "../styles/SetList.css";
 import Set from "./Set";
-import AddItem from "./AddItem";
+import AddSet from "./AddSet";
 
 class SetList extends Component {
   render() {
     return (
       <div className="SetList">
-        <AddItem addSet={this.addSet} type="set" />
+        <AddSet addSet={this.addSet} />
         {this.renderSets()}
       </div>
     );

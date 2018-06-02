@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import "../styles/BrowseList.css";
 import Flashcard from "./Flashcard";
-import AddItem from "./AddItem";
+import AddCard from "./AddCard";
 
 class BrowseList extends Component {
   render() {
     return (
       <div className="BrowseList">
         {this.renderCards()}
-        <AddItem addCard={this.addCard} type="flashcard" />
+        <AddCard addCard={this.addCard} />
       </div>
     );
   }
