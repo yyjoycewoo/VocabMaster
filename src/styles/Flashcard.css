@@ -108,13 +108,3 @@
   font-family: arial;
   line-height: 2em;
 }
-
-.studyCard {
-  /* background: #66B8Bf; */
-
-  width: 500px;
-	height: 300px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-}

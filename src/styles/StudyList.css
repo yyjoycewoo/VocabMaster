@@ -24,6 +24,10 @@
   margin: 5px;
   width: 45vw;
   height: 45vh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 }
 
 .center {
